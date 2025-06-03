@@ -22,7 +22,12 @@ const accessControl = {
     POST: "user",
     GET: "user",
   },
-  // Default: public access
+  modules: {
+    POST: "admin",
+    DELETE: "admin",
+    PUT: "admin",
+    GET: "user", // for enrolled users (or public)
+  },
 };
 
 function applyAccessControl(model, method) {
