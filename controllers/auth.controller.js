@@ -35,7 +35,7 @@ exports.login = async (req, res) => {
 exports.register = async (req, res) => {
   try {
     const { email, password, name } = req.body;
-    const User = await createModel('User');
+    const User = await createModel('users');
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
