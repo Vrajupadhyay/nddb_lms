@@ -20,11 +20,6 @@ const authRoutes = require('./routes/auth.routes');
 // Chat routes
 const chatRoutes = require('./routes/chat.routes');
 
-app.use((req, res, next) => {
-  console.log(`[${req.method}] ${req.originalUrl}`);
-  next();
-});
-
 app.use('/api', dynamicRoutes);
 app.use("/api/join", dynamicJoinRoutes);
 app.use('/auth', authRoutes);
