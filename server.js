@@ -17,10 +17,13 @@ const dynamicRoutes = require('./routes/dynamic.routes');
 const dynamicJoinRoutes = require('./routes/dynamicJoin.route');
 // Auth routes
 const authRoutes = require('./routes/auth.routes');
+// Chat routes
+const chatRoutes = require('./routes/chat.routes');
 
 app.use('/api', dynamicRoutes);
 app.use("/api/join", dynamicJoinRoutes);
 app.use('/auth', authRoutes);
+app.use('/chat', chatRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
